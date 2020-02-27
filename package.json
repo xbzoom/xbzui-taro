@@ -1,6 +1,6 @@
 {
   "name": "xbzui-taro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "UI KIT for Taro",
   "main": "dist/index.js",
   "main:h5": "dist/h5/index.js",

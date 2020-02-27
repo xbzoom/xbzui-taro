@@ -152,6 +152,7 @@ export default class AtCalendar extends Taro.Component<Props, Readonly<State>> {
     }
     
     return {
+      pickerKey: 0,
       generateDate: generateDateValue,
       selectedDate: this.getSelectedDate(start, end),
       collapse,
@@ -225,9 +226,18 @@ export default class AtCalendar extends Taro.Component<Props, Readonly<State>> {
     
     this.triggerChangeDate(_generateDate)
     this.setState({
+      pickerKey: this.state.pickerKey + 1,
       generateDate: _generateDateValue
     })
   }
+
+  @bind
+  handleCancel () {
+    this.setState({
+      pickerKey: this.state.pickerKey - 1,
+    })
+  }
+
   @bind
   handleSelectTime (value:string) {
     this.setState({
@@ -341,7 +351,7 @@ export default class AtCalendar extends Taro.Component<Props, Readonly<State>> {
     
   }
   render () {
-    const { generateDate, selectedDate, collapse, time, } = this.state
+    const { generateDate, selectedDate, collapse, time, pickerKey } = this.state
     const {
       marks,
       format,
@@ -362,6 +372,7 @@ export default class AtCalendar extends Taro.Component<Props, Readonly<State>> {
       onTouchStart={this.handleTouchStart}
       onTouchEnd={this.handleTouchEnd}>
         <AtCalendarController
+          key={pickerKey}
           minDate={minDate}
           maxDate={maxDate}
           hideArrow={hideArrow}
@@ -373,6 +384,7 @@ export default class AtCalendar extends Taro.Component<Props, Readonly<State>> {
           onPreMonth={this.handleClickPreMonth}
           onNextMonth={this.handleClickNextMonth}
           onSelectDate={this.handleSelectDate}
+          onCancel={this.handleCancel}
           onSelectTime={this.handleSelectTime}
           selectedDate={selectedDate}
           renderExtra={this.props.renderExtra}

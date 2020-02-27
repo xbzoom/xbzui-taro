@@ -104,6 +104,7 @@ export default class AtCalendarController extends Taro.Component<Props, State> {
           end={maxDateValue}
           start={minDateValue}
           onChange={this.props.onSelectDate}
+          onCancel={this.props.onCancel}
           value={dayjsDate.format('YYYY-MM-DD')}
         >
           <Text className='controller__info'>
@@ -114,6 +115,7 @@ export default class AtCalendarController extends Taro.Component<Props, State> {
           mode="multiSelector"
           range={this.timeArray}
           onChange={this.handleOnTimeChange}
+          onCancel={this.props.onCancel}
           value={timeIndex}
         >
           <Text className='controller__info controller__info--time'>

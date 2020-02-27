@@ -25,6 +25,8 @@ export interface Props {
 
   onSelectDate: (e: BaseEvent) => void
 
+  onCancel: () => void
+
   onSelectTime: (e:string) => void
 }
 
