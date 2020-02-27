@@ -1,0 +1,104 @@
+.shareCanvasWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(61, 61, 61, 0.5);
+  z-index: 99999;
+
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .canvasWrap {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+
+    .toolBar {
+      display: flex;
+      width: 100%;
+      height: 169px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .footerItem {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      image {
+        width: 77px;
+        height: 77px;
+      }
+
+      text {
+        font-size: 28px;
+        font-weight: 400;
+        color: #333;
+        margin-top: 9px;
+      }
+    }
+
+    .barTip {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 112px;
+      background-color: #fff;
+
+      .barTipLine {
+        font-size: 24px;
+        font-weight: 400;
+        color: #333;
+        display: flex;
+        margin-bottom: 12px;
+        margin-left: 120px;
+
+        .tipDot {
+          width: 8px;
+          height: 8px;
+          background: #FFAFAF;
+          border-radius: 50%;
+          margin: 12px;
+        }
+
+        .mark {
+          color: #DD3740;
+        }
+      }
+
+      .noMargin {
+        margin: 0;
+        margin-left: 120px;
+      }
+    }
+  }
+}
+
+.canvasOutter {
+  width: 554px;
+  height: 796px;
+
+  .canvas {
+    width: 100%;
+    height: 100%;
+  }
+}
